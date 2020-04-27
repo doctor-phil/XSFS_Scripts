@@ -107,3 +107,7 @@ echo Name[en_US]=OPENSSH ONE-TIME SETUP >> OPENSSH-SETUP.desktop
 chmod +x OPENSSH-SETUP.desktop
 
 touch installed
+echo "Success!"
+echo ""
+echo "Press Enter to close this window"
+
