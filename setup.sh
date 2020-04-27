@@ -31,6 +31,11 @@ echo '#!/usr/bin/env bash' > configure_wg.sh
 echo scp /home/lab/scripts/wg/Thin_server/wg_zu.conf $uname@$domain:/etc/wireguard/wg_zu.conf >> configure_wg.sh
 echo ssh $uname@$domain sudo systemctl enable wg-quick@wg_zu >> configure_wg.sh
 echo ssh $uname@$domain sudo systemctl start wg-quick@wg_zu >> configure_wg.sh
+echo 'echo ""' >> configure_wg.sh
+echo 'echo "Server session started successfully!"' >> configure_wg.sh
+echo 'echo ""' >> configure_wg.sh
+echo 'echo "Press Enter to close this window"' >> configure_wg.sh
+
 chmod +x configure_wg.sh
 
 #POINT THIN_HOOKS TO HOOK.SH
@@ -45,6 +50,11 @@ echo ssh $uname@$domain sudo systemctl stop nginx >> systemd_kill.sh
 echo ssh $uname@$domain sudo systemctl disable nginx >> systemd_kill.sh
 echo ssh $uname@$domain sudo systemctl stop wg-quick@wg_zu >> systemd_kill.sh
 echo ssh $uname@$domain sudo systemctl disable wg-quick@wg_zu >> systemd_kill.sh
+echo 'echo ""' >> systemd_kill.sh
+echo 'echo "Server session ended successfully!"' >> systemd_kill.sh
+echo 'echo ""' >> systemd_kill.sh
+echo 'echo "Press Enter to close this window"' >> systemd_kill.sh
+
 chmod +x systemd_kill.sh
 
 #CREATE OPENSSH SETUP SCRIPT
@@ -69,7 +79,7 @@ echo Comment= >> PRE-SESSION.desktop
 echo Exec=bash -c '"./configure_wg.sh; read"' >> PRE-SESSION.desktop
 echo Icon=preferences-desktop-remote-desktop >> PRE-SESSION.desktop
 echo Path=/home/lab/Desktop/XSFS_Scripts >> PRE-SESSION.desktop
-echo Terminal=false >> PRE-SESSION.desktop
+echo Terminal=true >> PRE-SESSION.desktop
 echo StartupNotify=false >> PRE-SESSION.desktop
 echo Name[en_US]=PRE-SESSION >> PRE-SESSION.desktop
 chmod +x PRE-SESSION.desktop
@@ -85,7 +95,7 @@ echo Comment= >> POST-SESSION.desktop
 echo Exec=bash -c '"./systemd_kill.sh; read"' >> POST-SESSION.desktop
 echo Icon=system-hibernate >> POST-SESSION.desktop
 echo Path=/home/lab/Desktop/XSFS_Scripts >> POST-SESSION.desktop
-echo Terminal=false >> POST-SESSION.desktop
+echo Terminal=true >> POST-SESSION.desktop
 echo StartupNotify=false >> POST-SESSION.desktop
 echo Name[en_US]=POST-SESSION >> POST-SESSION.desktop
 chmod +x POST-SESSION.desktop
