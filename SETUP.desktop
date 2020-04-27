@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=XSFS SETUP
+Comment=
+Exec=bash -c "./setup.sh; read"
+Icon=parole-extension
+Path=/home/lab/Desktop/XSFS_Scripts
+Terminal=true
+StartupNotify=false
+Name[en_US]=XSFS ONE-TIME SETUP
