@@ -1,5 +1,9 @@
 # XSFS_Scripts
 
+This code builds off of the ztree-unleashed platform developed by researchers at the Cologne Laboratory for Economic Research.
+Please visit https://cler1.gitlab.io/ztree-unleashed-doc/docs/installation/ for more information about ztree-unleashed.
+Also, remember to cite their working paper!
+
 This folder MUST be placed on the desktop!
 
 This code will set up a bunch of scripts for using the XS/FS server.
