@@ -31,6 +31,8 @@ echo '#!/usr/bin/env bash' > configure_wg.sh
 echo scp /home/lab/scripts/wg/Thin_server/wg_zu.conf $uname@$domain:/etc/wireguard/wg_zu.conf >> configure_wg.sh
 echo ssh $uname@$domain sudo systemctl enable wg-quick@wg_zu >> configure_wg.sh
 echo ssh $uname@$domain sudo systemctl start wg-quick@wg_zu >> configure_wg.sh
+echo ssh $uname@$domain sudo systemctl enable rh-php73-php-fpm >> configure_wg.sh
+echo ssh $uname@$domain sudo systemctl start rh-php73-php-fpm >> configure_wg.sh
 echo 'echo ""' >> configure_wg.sh
 echo 'echo "Server session started successfully!"' >> configure_wg.sh
 echo 'echo ""' >> configure_wg.sh
@@ -50,6 +52,8 @@ echo ssh $uname@$domain sudo systemctl stop nginx >> systemd_kill.sh
 echo ssh $uname@$domain sudo systemctl disable nginx >> systemd_kill.sh
 echo ssh $uname@$domain sudo systemctl stop wg-quick@wg_zu >> systemd_kill.sh
 echo ssh $uname@$domain sudo systemctl disable wg-quick@wg_zu >> systemd_kill.sh
+echo ssh $uname@$domain sudo systemctl stop rh-php73-php-fpm >> systemd_kill.sh
+echo ssh $uname@$domain sudo systemctl disable rh-php73-php-fpm >> systemd_kill.sh
 echo 'echo ""' >> systemd_kill.sh
 echo 'echo "Server session ended successfully!"' >> systemd_kill.sh
 echo 'echo ""' >> systemd_kill.sh
