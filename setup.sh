@@ -24,6 +24,7 @@ echo scp /share/.session/nginx.conf $uname@$domain:/etc/nginx/zTu.conf >> hook.s
 echo '' >> hook.sh
 echo ssh $uname@$domain sudo systemctl enable nginx >> hook.sh
 echo ssh $uname@$domain sudo systemctl start nginx >> hook.sh
+echo ssh $uname@$domain sudo systemctl restart nginx >> hook.sh
 
 #CREATE VPN CONFIGURATION STARTER
 touch configure_wg.sh
@@ -33,6 +34,7 @@ echo ssh $uname@$domain sudo systemctl enable wg-quick@wg_zu >> configure_wg.sh
 echo ssh $uname@$domain sudo systemctl start wg-quick@wg_zu >> configure_wg.sh
 echo ssh $uname@$domain sudo systemctl enable rh-php73-php-fpm >> configure_wg.sh
 echo ssh $uname@$domain sudo systemctl start rh-php73-php-fpm >> configure_wg.sh
+echo ssh $uname@$domain sudo systemctl restart wg-quick@wg_zu >> configure_wg.sh
 echo 'echo ""' >> configure_wg.sh
 echo 'echo "Server session started successfully!"' >> configure_wg.sh
 echo 'echo ""' >> configure_wg.sh
