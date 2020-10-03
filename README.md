@@ -19,7 +19,8 @@ This will create a secure SSH key for this VM on the server so
 you don't need a password to log in each time. 
 
 It is recommended but not required.
-Also, remember to change the port numbers.
+Also, remember to change the port number
+(NOTE: we no longer need to modify the ports in generate_session.py)
 
 The important launchers are "PRE-SESSION" and "POST-SESSION"
 These can be found on the desktop after installation
